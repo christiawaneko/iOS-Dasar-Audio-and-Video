@@ -1,24 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dld-2t-mHT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Audio-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AudioViewController" customModule="Audio_dan_Video" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="LHe-ja-1Ei">
+                                <rect key="frame" x="10" y="256" width="355" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iSt-iU-GTf">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="100"/>
+                                        <state key="normal" image="play">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnPlay:" destination="BYZ-38-t0r" eventType="touchUpInside" id="31o-Oq-laz"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xs-oV-Mkl">
+                                        <rect key="frame" x="126.5" y="0.0" width="102" height="100"/>
+                                        <state key="normal" image="pause">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnPause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wzR-p5-MeP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wgy-LE-kmR">
+                                        <rect key="frame" x="253.5" y="0.0" width="101.5" height="100"/>
+                                        <state key="normal" image="stop">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnStop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Of-WO-7Ww"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="IyV-tL-6HD"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dml-Zk-yzS">
+                                <rect key="frame" x="25" y="145" width="325" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dml-Zk-yzS" secondAttribute="trailing" constant="25" id="4QT-Ll-RKi"/>
+                            <constraint firstAttribute="trailing" secondItem="LHe-ja-1Ei" secondAttribute="trailing" constant="10" id="81t-st-9eC"/>
+                            <constraint firstItem="dml-Zk-yzS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="8zz-A2-8gO"/>
+                            <constraint firstItem="LHe-ja-1Ei" firstAttribute="top" secondItem="dml-Zk-yzS" secondAttribute="bottom" constant="75" id="YAc-1y-0Va"/>
+                            <constraint firstItem="dml-Zk-yzS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="125" id="fMk-Y4-miX"/>
+                            <constraint firstItem="LHe-ja-1Ei" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="tDq-9d-d1n"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Audio" image="audio" largeContentSizeImage="audio" id="RLK-Ba-czc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Video-->
+        <scene sceneID="7Gd-5K-Q5f">
+            <objects>
+                <viewController id="6rh-K9-eXp" customClass="VideoViewController" customModule="Audio_dan_Video" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t8Q-d5-UV9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1AW-Ut-EQ6">
+                                <rect key="frame" x="10" y="256" width="355" height="128"/>
+                                <state key="normal" image="play">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnPlay:" destination="6rh-K9-eXp" eventType="touchUpInside" id="PNI-5T-Vhf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Niv-8H-INw">
+                                <rect key="frame" x="25" y="145" width="325" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kjm-u9-Ivh" firstAttribute="trailing" secondItem="Niv-8H-INw" secondAttribute="trailing" constant="25" id="5SC-b4-e1E"/>
+                            <constraint firstItem="Niv-8H-INw" firstAttribute="top" secondItem="kjm-u9-Ivh" secondAttribute="top" constant="125" id="5ly-lf-xd7"/>
+                            <constraint firstItem="Niv-8H-INw" firstAttribute="leading" secondItem="kjm-u9-Ivh" secondAttribute="leading" constant="25" id="N1x-gx-2zy"/>
+                            <constraint firstItem="kjm-u9-Ivh" firstAttribute="trailing" secondItem="1AW-Ut-EQ6" secondAttribute="trailing" constant="10" id="Sfq-jA-gx5"/>
+                            <constraint firstItem="1AW-Ut-EQ6" firstAttribute="top" secondItem="Niv-8H-INw" secondAttribute="bottom" constant="75" id="Ue6-Bn-eD1"/>
+                            <constraint firstItem="1AW-Ut-EQ6" firstAttribute="leading" secondItem="kjm-u9-Ivh" secondAttribute="leading" constant="10" id="lRa-c1-5Qi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kjm-u9-Ivh"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Video" image="video" largeContentSizeImage="video" id="iYQ-dT-H9a"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fNS-ps-Hv2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1090" y="795"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="DLs-rm-lWa">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="dld-2t-mHT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fO2-Im-VwI">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eVz-oj-Rlz"/>
+                        <segue destination="6rh-K9-eXp" kind="relationship" relationship="viewControllers" id="X7L-kx-KDx"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="L9D-4e-58f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-76" y="445"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="audio" width="24" height="24"/>
+        <image name="pause" width="128" height="128"/>
+        <image name="play" width="128" height="128"/>
+        <image name="stop" width="128" height="128"/>
+        <image name="video" width="24" height="24"/>
+    </resources>
 </document>
